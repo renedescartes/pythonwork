@@ -5,7 +5,7 @@ def subMatrix(matrix, rowNumber):
         raise Exception("Please pass matrix of non zero length")
     if len(matrix) != len(matrix[0]):
         raise Exception("Please pass a square matrix")
-    newMatrix = matrix[:]
+    newMatrix = [row[:] for row in matrix]
     del newMatrix[rowNumber]
     for row in newMatrix:
         del row[0]
@@ -20,4 +20,4 @@ def determinant(matrix):
 
 
 if __name__ == "__main__":
-    print determinant([[3, 1, 2], [2, 0, 3], [4, 1, 2]])
+    print determinant([[-2, 2, 3], [-1, 1, 3], [2, 0, -1]])
