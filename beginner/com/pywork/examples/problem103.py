@@ -20,3 +20,7 @@ def is_rule2_satisfied(inputs):
             return False
     return True
 
+def computed_optimal_set(n):
+    return None
+
+
