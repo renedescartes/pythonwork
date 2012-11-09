@@ -22,5 +22,8 @@ class TestCompute(unittest.TestCase):
     def test_vandermonde(self):
         self.assertEqual(compute.vander_monde_matrix(3), [[1, 1, 1], [4, 2, 1], [9, 3, 1]])
 
+    def test_replace_column(self):
+        self.assertEqual(compute.replace_column(self.matrix, [7, 8, 3], 2), [[-2, 2, 7], [-1, 1, 8], [2, 0, 3]])
+
 if __name__ == '__main__':
     unittest.main()

@@ -33,3 +33,13 @@ def vander_monde_matrix(n):
     (section - Constructing the interpolation polynomial)
     """
     return [[pow(row, n - column) for column in range(1, n+1)] for row in range(1, n+1)]
+
+def solve_vander_monde(matrix, output):
+    d = determinant(matrix)
+    return [determinant(replace_column(matrix, output, columnNumber))/d for columnNumber in range(0, len(matrix))]
+
+def replace_column(matrix, column, columnNumber):
+    newMatrix = [row[:] for row in matrix]
+    for rowIndex in range(0, len(newMatrix)):
+        newMatrix[rowIndex][columnNumber] = column[rowIndex]
+    return newMatrix
