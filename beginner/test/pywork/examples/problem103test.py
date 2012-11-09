@@ -12,6 +12,7 @@ class TestProblem102(unittest.TestCase):
 
     def test_rule2(self):
         self.assertTrue(problem103.is_rule2_satisfied([6, 9, 11, 12, 13]))
+        self.assertFalse(problem103.is_rule2_satisfied([3, 9, 11, 12, 13]))
 
 if __name__ == '__main__':
     unittest.main()

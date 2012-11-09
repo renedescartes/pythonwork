@@ -1,4 +1,5 @@
 import itertools
+import runutility
 
 def is_special_sum_set(inputs):
     return is_rule1_satisfied(inputs) & is_rule2_satisfied(inputs)
@@ -15,10 +16,8 @@ def is_rule1_satisfied(inputs):
     return True
 
 def is_rule2_satisfied(inputs):
-    for length in range(1, len(inputs)):
-        if sum(inputs[-1 * length:]) >= sum(inputs[:length+1]):
-            return False
-    return True
+    return runutility.find(lambda length: sum(inputs[-1 * length:]) >= sum(inputs[:length+1]), range(1, len(inputs))) is None
+
 
 def computed_optimal_set(n):
     return None
