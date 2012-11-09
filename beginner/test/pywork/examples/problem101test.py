@@ -29,5 +29,8 @@ class TestCompute(unittest.TestCase):
         matrix = problem101.vander_monde_matrix(3)
         self.assertEqual(problem101.cramers_solution(matrix, [1, 8, 27]), [6, -11, 6])
 
+    def test_fit(self):
+        self.assertEqual(problem101.first_incorrect_term([6, -11, 6], [1, 8, 27, 64, 125]), 58)
+
 if __name__ == '__main__':
     unittest.main()

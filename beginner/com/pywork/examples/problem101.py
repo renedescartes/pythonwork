@@ -50,3 +50,8 @@ def replace_column(matrix, column, columnNumber):
     for rowIndex in range(0, len(newMatrix)):
         newMatrix[rowIndex][columnNumber] = column[rowIndex]
     return newMatrix
+
+def first_incorrect_term(polynomial, terms):
+    for index in range(len(polynomial), len(terms)):
+        if evaluate(polynomial, index) != terms[index-1]:
+            return evaluate(polynomial, index)
