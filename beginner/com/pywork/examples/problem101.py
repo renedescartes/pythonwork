@@ -62,8 +62,10 @@ def first_incorrect_term(polynomial, terms):
 
 def sum_of_bop(polynomial):
     terms = evaluate_terms(polynomial, len(polynomial) + 2)
-    sum = 0
+    sum_of_bop = 0
     for index in range(1, len(polynomial)):
         solutionPolynomial = cramers_solution(vander_monde_matrix(index), terms[:index])
-        sum += first_incorrect_term(solutionPolynomial, terms)
-    return sum
+        incorrect_term = first_incorrect_term(solutionPolynomial, terms)
+        print "Index [%s] Incorrect Term [%s] Sum [%s]" % (index, incorrect_term, sum_of_bop)
+        sum_of_bop += incorrect_term
+    return sum_of_bop
