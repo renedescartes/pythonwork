@@ -1,4 +1,3 @@
-import timeit
 from com.pywork.examples.runutility import timing
 
 def sub_matrix(matrix, rowNumber):
