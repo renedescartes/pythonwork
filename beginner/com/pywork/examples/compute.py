@@ -28,4 +28,8 @@ def evaluateTerms(polynomial, n):
     return [evaluate(polynomial, i) for i in range(1, n+1)]
 
 def vanderMondeMatrix(n):
+    """
+    Returns a vander monde matrix with N terms http://en.wikipedia.org/wiki/Polynomial_interpolation
+    (section - Constructing the interpolation polynomial)
+    """
     return [[pow(row, n - column) for column in range(1, n+1)] for row in range(1, n+1)]
