@@ -14,5 +14,9 @@ class TestCompute(unittest.TestCase):
     def test_determinant(self):
         self.assertEqual(compute.determinant(self.matrix), 6)
 
+    def test_evaluate(self):
+        p = (6, -11, 6)
+        self.assertEqual(compute.evaluate(p, 3), 27)
+
 if __name__ == '__main__':
     unittest.main()
