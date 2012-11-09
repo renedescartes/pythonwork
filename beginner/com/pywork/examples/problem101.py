@@ -52,6 +52,10 @@ def replace_column(matrix, column, columnNumber):
     return newMatrix
 
 def first_incorrect_term(polynomial, terms):
+    """
+    Given a polynomial and a set of terms this method returns the First Incorrect Term
+    as described in Problem101 of Euler
+    """
     for index in range(len(polynomial), len(terms)):
         if evaluate(polynomial, index) != terms[index-1]:
             return evaluate(polynomial, index)
