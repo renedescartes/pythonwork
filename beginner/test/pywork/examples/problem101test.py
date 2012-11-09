@@ -32,5 +32,8 @@ class TestCompute(unittest.TestCase):
     def test_fit(self):
         self.assertEqual(problem101.first_incorrect_term([6, -11, 6], [1, 8, 27, 64, 125]), 58)
 
+    def test_sum_of_bop(self):
+        self.assertEqual(problem101.sum_of_bop([1, 0, 0, 0]), 74)
+
 if __name__ == '__main__':
     unittest.main()
