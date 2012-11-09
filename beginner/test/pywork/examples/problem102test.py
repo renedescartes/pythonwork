@@ -20,5 +20,8 @@ class TestProblem102(unittest.TestCase):
         self.assertTrue(problem102.contains_origin(self.p1, self.p2, self.p3))
         self.assertFalse(problem102.contains_origin(self.q1, self.q2, self.q3))
 
+    def test_read(self):
+        print problem102.read_points("/home/kannan/WorkArea/GitWork/pythonwork/beginner/com/pywork/examples/triangle.txt")
+
 if __name__ == '__main__':
     unittest.main()
