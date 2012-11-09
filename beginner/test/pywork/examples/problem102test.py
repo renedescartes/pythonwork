@@ -23,5 +23,8 @@ class TestProblem102(unittest.TestCase):
     def test_read(self):
         self.assertEquals(len(problem102.read_points("triangle.txt")), 1000)
 
+    #def test_answer(self):
+        #self.assertEquals(problem102.answer("triangle.txt"), 25)
+
 if __name__ == '__main__':
     unittest.main()
