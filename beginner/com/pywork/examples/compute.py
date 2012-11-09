@@ -9,3 +9,6 @@ def determinant(matrix):
 
 def evaluate(polynomial, n):
     return sum([polynomial[termNumber] * pow(n, len(polynomial) - termNumber -1) for termNumber in range(0, len(polynomial))])
+
+def evaluateTerms(polynomial, n):
+    return [evaluate(polynomial, i) for i in range(1, n+1)]

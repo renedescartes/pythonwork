@@ -17,6 +17,7 @@ class TestCompute(unittest.TestCase):
     def test_evaluate(self):
         p = (6, -11, 6)
         self.assertEqual(compute.evaluate(p, 3), 27)
+        self.assertEqual(compute.evaluateTerms(p, 4), [1, 8, 27, 58])
 
 if __name__ == '__main__':
     unittest.main()
