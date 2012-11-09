@@ -26,3 +26,6 @@ def evaluateTerms(polynomial, n):
     Given a polynomial and N this method evaluates the first N terms
     """
     return [evaluate(polynomial, i) for i in range(1, n+1)]
+
+def vanderMondeMatrix(n):
+    return [[pow(row, n - column) for column in range(1, n+1)] for row in range(1, n+1)]

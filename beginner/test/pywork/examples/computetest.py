@@ -19,5 +19,8 @@ class TestCompute(unittest.TestCase):
         self.assertEqual(compute.evaluate(p, 3), 27)
         self.assertEqual(compute.evaluateTerms(p, 4), [1, 8, 27, 58])
 
+    def test_vandermonde(self):
+        self.assertEqual(compute.vanderMondeMatrix(3), [[1, 1, 1], [4, 2, 1], [9, 3, 1]])
+
 if __name__ == '__main__':
     unittest.main()
