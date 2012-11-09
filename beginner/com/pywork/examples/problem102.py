@@ -7,11 +7,14 @@ def contains_origin(p1, p2, p3):
     return area(p1, p2, (0,0)) + area(p1, p3, (0,0)) + area(p2, p3, (0,0)) == area(p1, p2, p3)
 
 def read_points(filename):
-    return [(w.rstrip().split(",")[0:2], w.rstrip().split(",")[2:4], w.rstrip().split(",")[4:6])
-        for w in (open(full_path(filename))).readlines()]
+    return [read_line(w) for w in (open(full_path(filename))).readlines()]
+
+def read_line(line):
+    list = line.rstrip().split(",")
+    return map(int, list[0:2]), map(int, list[2:4]), map(int, list[4:6])
 
 def answer(filename):
-    sum([1 if contains_origin(pointSet[0], pointSet[1], pointSet[2]) else 0 for pointSet in (read_points(filename))])
+    return sum([1 if contains_origin(pointSet[0], pointSet[1], pointSet[2]) else 0 for pointSet in (read_points(filename))])
 
 def full_path(filename):
-    return os.path.join(os.path.dirname(__file__), filename);
+    return os.path.join(os.path.dirname(__file__), filename)
