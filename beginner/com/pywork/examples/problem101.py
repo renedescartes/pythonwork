@@ -34,11 +34,18 @@ def vander_monde_matrix(n):
     """
     return [[pow(row, n - column) for column in range(1, n+1)] for row in range(1, n+1)]
 
-def solve_vander_monde(matrix, output):
+def cramers_solution(matrix, output):
+    """
+    Given a matrix and and output this method solves the problem using Cramers rule
+    http://en.wikipedia.org/wiki/Cramer%27s_rule
+    """
     d = determinant(matrix)
     return [determinant(replace_column(matrix, output, columnNumber))/d for columnNumber in range(0, len(matrix))]
 
 def replace_column(matrix, column, columnNumber):
+    """
+    Replace a columnNumber in a matrix with the given column array
+    """
     newMatrix = [row[:] for row in matrix]
     for rowIndex in range(0, len(newMatrix)):
         newMatrix[rowIndex][columnNumber] = column[rowIndex]

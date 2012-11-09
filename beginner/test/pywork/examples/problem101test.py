@@ -27,7 +27,7 @@ class TestCompute(unittest.TestCase):
 
     def test_solve_vandermonde(self):
         matrix = problem101.vander_monde_matrix(3)
-        self.assertEqual(problem101.solve_vander_monde(matrix, [1, 8, 27]), [6, -11, 6])
+        self.assertEqual(problem101.cramers_solution(matrix, [1, 8, 27]), [6, -11, 6])
 
 if __name__ == '__main__':
     unittest.main()
