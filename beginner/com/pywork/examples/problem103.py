@@ -15,5 +15,8 @@ def is_rule1_satisfied(inputs):
     return True
 
 def is_rule2_satisfied(inputs):
-    return False
+    for length in range(1, len(inputs)):
+        if sum(inputs[-1 * length:]) >= sum(inputs[:length+1]):
+            return False
+    return True
 
