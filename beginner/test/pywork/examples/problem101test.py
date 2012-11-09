@@ -34,7 +34,8 @@ class TestCompute(unittest.TestCase):
 
     def test_sum_of_bop(self):
         self.assertEqual(problem101.sum_of_bop([1, 0, 0, 0]), 74)
-        #self.assertEqual(problem101.sum_of_bop([1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1]), 74)
+        #The below will take 2 minutes to complete
+        #self.assertEqual(problem101.sum_of_bop([1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1]), 37076114526)
 
 
 if __name__ == '__main__':
