@@ -1,4 +1,4 @@
-def subMatrix(matrix, rowNumber):
+def sub_matrix(matrix, rowNumber):
     """
     Given a matrix and a row number this method computes a sub matrix for the cofactor of the element in the first column
     of that given row number.
@@ -12,7 +12,7 @@ def determinant(matrix):
     Computes the determinant of a matrix. Please note responsibility of caller to call with a square matrix
     """
     return matrix[0][0] if len(matrix) == 1 else \
-        sum([determinant(subMatrix(matrix, rowNumber)) * matrix[rowNumber][0] * pow(-1, rowNumber+1) for rowNumber in range(0, len(matrix))])
+        sum([determinant(sub_matrix(matrix, rowNumber)) * matrix[rowNumber][0] * pow(-1, rowNumber+1) for rowNumber in range(0, len(matrix))])
 
 def evaluate(polynomial, n):
     """
@@ -21,13 +21,13 @@ def evaluate(polynomial, n):
     """
     return sum([polynomial[termNumber] * pow(n, len(polynomial) - termNumber -1) for termNumber in range(0, len(polynomial))])
 
-def evaluateTerms(polynomial, n):
+def evaluate_terms(polynomial, n):
     """
     Given a polynomial and N this method evaluates the first N terms
     """
     return [evaluate(polynomial, i) for i in range(1, n+1)]
 
-def vanderMondeMatrix(n):
+def vander_monde_matrix(n):
     """
     Returns a vander monde matrix with N terms http://en.wikipedia.org/wiki/Polynomial_interpolation
     (section - Constructing the interpolation polynomial)

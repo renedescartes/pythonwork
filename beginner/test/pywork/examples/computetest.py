@@ -9,7 +9,7 @@ class TestCompute(unittest.TestCase):
         self.matrix = [[-2, 2, 3], [-1, 1, 3], [2, 0, -1]]
 
     def test_sub_matrix(self):
-        self.assertEqual(compute.subMatrix(self.matrix, 2), [[2, 3], [1, 3]])
+        self.assertEqual(compute.sub_matrix(self.matrix, 2), [[2, 3], [1, 3]])
 
     def test_determinant(self):
         self.assertEqual(compute.determinant(self.matrix), 6)
@@ -17,10 +17,10 @@ class TestCompute(unittest.TestCase):
     def test_evaluate(self):
         p = (6, -11, 6)
         self.assertEqual(compute.evaluate(p, 3), 27)
-        self.assertEqual(compute.evaluateTerms(p, 4), [1, 8, 27, 58])
+        self.assertEqual(compute.evaluate_terms(p, 4), [1, 8, 27, 58])
 
     def test_vandermonde(self):
-        self.assertEqual(compute.vanderMondeMatrix(3), [[1, 1, 1], [4, 2, 1], [9, 3, 1]])
+        self.assertEqual(compute.vander_monde_matrix(3), [[1, 1, 1], [4, 2, 1], [9, 3, 1]])
 
 if __name__ == '__main__':
     unittest.main()
