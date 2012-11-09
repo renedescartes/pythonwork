@@ -13,8 +13,8 @@ class TestProblem102(unittest.TestCase):
         self.q3 = (574, -645)
 
     def test_area(self):
-        self.assertEqual(problem102.area(self.p1, self.p2, self.p3), 1381221)
-        self.assertEqual(problem102.area((0, 3), (4, 0), (0, 0)), 12)
+        self.assertEqual(problem102.area(self.p1, self.p2, self.p3), 690610.5)
+        self.assertEqual(problem102.area((0, 3), (4, 0), (0, 0)), 6)
 
     def test_contains(self):
         self.assertTrue(problem102.contains_origin(self.p1, self.p2, self.p3))
