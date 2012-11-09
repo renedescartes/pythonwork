@@ -1,3 +1,6 @@
+import timeit
+from com.pywork.examples.runutility import timing
+
 def sub_matrix(matrix, rowNumber):
     """
     Given a matrix and a row number this method computes a sub matrix for the cofactor of the element in the first column
@@ -60,6 +63,7 @@ def first_incorrect_term(polynomial, terms):
         if evaluate(polynomial, index) != terms[index-1]:
             return evaluate(polynomial, index)
 
+@timing
 def sum_of_bop(polynomial):
     terms = evaluate_terms(polynomial, len(polynomial) + 2)
     return sum([first_incorrect_term(cramers_solution(vander_monde_matrix(index), terms[:index]), terms) for index in range(1, len(polynomial))])
