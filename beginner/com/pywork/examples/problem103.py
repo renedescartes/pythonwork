@@ -20,6 +20,11 @@ def is_rule2_satisfied(inputs):
 
 
 def computed_optimal_set(n):
-    return None
+    current = [1]
+    for index in range(1, n):
+        b = current[len(current)/2]
+        current = map(lambda i: i + b, current)
+        current.insert(0, b)
+    return current
 
 
