@@ -11,7 +11,7 @@ def answer():
         ends_with_pandigital = is_pandigital(b[-9:])
         starts_with_pandigital = is_pandigital(b[:9])
         if ends_with_pandigital or starts_with_pandigital:
-            print "k = %s start = %s end = %s a = %s b = %s" % (k, starts_with_pandigital, ends_with_pandigital, "".join(map(str, a)), "".join(map(str, b)))
+            print "k = %s start = %s end = %s" % (k, starts_with_pandigital, ends_with_pandigital)
         if starts_with_pandigital and ends_with_pandigital:
             return k
         k, a, b = k + 1, b, add_big_number(a, b)
