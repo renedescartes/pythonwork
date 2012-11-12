@@ -24,4 +24,6 @@ def computed_optimal_set(n):
         current = [b] + map(lambda i: i + b, current)
     return current
 
+def adjustment_vector_iterator(n, adjustment):
+    return itertools.combinations_with_replacement(range(-1 * adjustment, adjustment + 1), n);
 

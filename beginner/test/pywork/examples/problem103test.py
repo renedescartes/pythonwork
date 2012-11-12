@@ -22,5 +22,9 @@ class TestProblem102(unittest.TestCase):
         self.assertEquals(problem103.computed_optimal_set(5), [6, 9, 11, 12, 13])
         self.assertEquals(problem103.computed_optimal_set(6), [11, 17, 20, 22, 23, 24])
 
+    def test_iterator(self):
+        iterator = problem103.adjustment_vector_iterator(7, 3)
+        self.assertEquals(len(list(iterator)), 1716)
+
 if __name__ == '__main__':
     unittest.main()
