@@ -1,7 +1,7 @@
 import unittest
 from com.pywork.examples import problem103
 
-class TestProblem102(unittest.TestCase):
+class TestProblem103(unittest.TestCase):
 
     def setUp(self):
         pass
