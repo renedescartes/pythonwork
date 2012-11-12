@@ -4,8 +4,7 @@ import runutility
 def is_special_sum_set(inputs):
     return is_rule1_satisfied(inputs) & is_rule2_satisfied(inputs)
 
-def powerset(iterable):
-    s = list(iterable)
+def powerset(s):
     return itertools.chain.from_iterable(itertools.combinations(s, r) for r in range(len(s)+1))
 
 def is_rule1_satisfied(inputs):
