@@ -8,6 +8,8 @@ class TestProblem104(unittest.TestCase):
 
     def test_pandigital(self):
         self.assertTrue(problem104.is_pandigital(431259876))
+        self.assertTrue(problem104.is_pandigital([4,3,1,2,5,9,8,7,6]))
+        self.assertTrue(problem104.is_pandigital(map(str, [4,3,1,2,5,9,8,7,6])))
         self.assertFalse(problem104.is_pandigital(431239876))
         self.assertFalse(problem104.is_pandigital(4312876))
         self.assertFalse(problem104.is_pandigital(4312598769))

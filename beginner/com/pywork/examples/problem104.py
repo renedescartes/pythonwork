@@ -1,8 +1,9 @@
-ALL_DIGIT_SET = set([str(i) for i in range(1, 10)])
+ALL_DIGIT_SET = set([i for i in range(1, 10)])
 
 def is_pandigital(n):
-    digitSet = set(n) if isinstance(n, list) else set(str(n))
-    return len(str(n)) == 9 and len(digitSet) == 9 and len(digitSet - ALL_DIGIT_SET) == 0
+    digitList = map(int, n) if isinstance(n, list) else map(int, str(n))
+    digitSet = set(digitList)
+    return len(digitList) == 9 and len(digitSet) == 9 and len(digitSet - ALL_DIGIT_SET) == 0
 
 def answer():
     k, a, b = 2, [1], [1]
