@@ -28,7 +28,7 @@ def adjustment_vector_iterator(n, adjustment):
     current = int("".join(map(str, [1 for i in range(n)])))
     high = int("".join(map(str, [n for i in range(n)])))
     while current <= high:
-        if is_valid_number(current, adjustment):
+        if runutility.find(lambda digit: int(digit) > (2 * adjustment + 1) or int(digit) < 1, str(current)):
             yield map(lambda n : int(n) - adjustment - 1, str(current))
         current += 1
 
