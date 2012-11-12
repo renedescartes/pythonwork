@@ -1,14 +1,16 @@
 import unittest
-from com.pywork.examples import problem103
+from com.pywork.examples import problem104
 
 class TestProblem104(unittest.TestCase):
 
     def setUp(self):
         pass
 
-    def test_rule1(self):
-        self.assertTrue(problem103.is_rule1_satisfied([3, 5, 6, 7]))
-        self.assertFalse(problem103.is_rule1_satisfied([5, 6, 7, 11]))
+    def test_pandigital(self):
+        self.assertTrue(problem104.is_pandigital(431259876))
+        self.assertFalse(problem104.is_pandigital(431239876))
+        self.assertFalse(problem104.is_pandigital(4312876))
+        self.assertFalse(problem104.is_pandigital(4312598769))
 
 if __name__ == '__main__':
     unittest.main()

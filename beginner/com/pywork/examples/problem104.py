@@ -1,2 +1,5 @@
+ALL_DIGIT_SET = set([str(i) for i in range(1, 10)])
+
 def is_pandigital(n):
-    return len(n) == 9 and (set(n) == {1, 2, 3, 4, 5, 6, 7, 8, 9})
+    digitSet = set(str(n))
+    return len(str(n)) == 9 and len(digitSet) == 9 and len(digitSet - ALL_DIGIT_SET) == 0
