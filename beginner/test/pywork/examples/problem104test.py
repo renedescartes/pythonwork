@@ -17,5 +17,9 @@ class TestProblem104(unittest.TestCase):
         self.assertEquals(problem104.add_big_number([3], [1]), [4])
         self.assertEquals(problem104.add_big_number([3], [9]), [1, 2])
 
+    def test_answer(self):
+        #self.assertEquals(problem104.answer(), 245)
+        pass
+
 if __name__ == '__main__':
     unittest.main()
