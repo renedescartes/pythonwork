@@ -22,9 +22,20 @@ class TestProblem102(unittest.TestCase):
         self.assertEquals(problem103.computed_optimal_set(5), [6, 9, 11, 12, 13])
         self.assertEquals(problem103.computed_optimal_set(6), [11, 17, 20, 22, 23, 24])
 
-    def test_iterator(self):
+    def test_is_valid_number(self):
+        self.assertTrue(problem103.is_valid_number(1111111, 3))
+        self.assertTrue(problem103.is_valid_number(777777, 3))
+        self.assertTrue(problem103.is_valid_number(777776, 3))
+        self.assertFalse(problem103.is_valid_number(777770, 3))
+        self.assertFalse(problem103.is_valid_number(777778, 3))
+
+    #This takes about 44 seconds to run
+    def xx_test_iterator(self):
         iterator = problem103.adjustment_vector_iterator(7, 3)
-        self.assertEquals(len(list(iterator)), 1716)
+        count = 0
+        for i in iterator:
+            count+=1
+        self.assertEquals(count, pow(7, 7))
 
 if __name__ == '__main__':
     unittest.main()

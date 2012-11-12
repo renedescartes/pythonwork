@@ -25,5 +25,15 @@ def computed_optimal_set(n):
     return current
 
 def adjustment_vector_iterator(n, adjustment):
-    return itertools.combinations_with_replacement(range(-1 * adjustment, adjustment + 1), n);
+    current = int("".join(map(str, [1 for i in range(n)])))
+    high = int("".join(map(str, [n for i in range(n)])))
+    while current <= high:
+        if is_valid_number(current, adjustment):
+            yield map(lambda n : int(n) - adjustment - 1, str(current))
+        current += 1
 
+def is_valid_number(number, adjustment):
+    for digit in str(number):
+        if int(digit) > (2 * adjustment + 1) or int(digit) < 1:
+            return False
+    return True
