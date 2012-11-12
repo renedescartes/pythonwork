@@ -23,8 +23,7 @@ def computed_optimal_set(n):
     current = [1]
     for index in range(1, n):
         b = current[len(current)/2]
-        current = map(lambda i: i + b, current)
-        current.insert(0, b)
+        current = [b] + map(lambda i: i + b, current)
     return current
 
 
