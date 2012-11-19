@@ -8,7 +8,7 @@ class TestProblem105(unittest.TestCase):
         pass
 
     def test_area(self):
-        self.assertEqual(problem105.answer("sets.txt"), 28)
+        self.assertEqual(problem105.answer("sets.txt"), 73702)
 
 if __name__ == '__main__':
     unittest.main()

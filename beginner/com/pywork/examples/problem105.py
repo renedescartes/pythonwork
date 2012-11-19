@@ -3,12 +3,7 @@ import runutility
 
 def is_special_sum_set(inputs):
     inputs.sort()
-    rule2_satisfied = is_rule2_satisfied(inputs)
-    print "Inputs %s" % inputs
-    return rule2_satisfied and is_rule1_satisfied(inputs)
-
-def powerset(s):
-    return itertools.chain.from_iterable(itertools.combinations(s, r) for r in range(len(s)+1))
+    return is_rule2_satisfied(inputs) and is_rule1_satisfied(inputs)
 
 def is_rule1_satisfied(inputs):
     for r in range(1, len(inputs)):
@@ -27,4 +22,4 @@ def read_elements(input_file):
     return [map(int, w.rstrip().split(",")) for w in (open(runutility.full_path(input_file))).readlines()]
 
 def answer(input_file):
-    return sum([1 if is_special_sum_set(input) else 0 for input in (read_elements(input_file))])
+    return sum([sum(input) if is_special_sum_set(input) else 0 for input in (read_elements(input_file))])
