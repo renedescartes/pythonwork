@@ -1,3 +1,4 @@
+import os
 import time
 
 def timing(f):
@@ -16,3 +17,6 @@ def find(f, seq):
         if f(item):
             return item
     return None
+
+def full_path(filename):
+    return os.path.join(os.path.dirname(__file__), filename)
