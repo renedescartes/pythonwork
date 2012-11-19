@@ -3,8 +3,9 @@ import runutility
 
 def is_special_sum_set(inputs):
     inputs.sort()
-    print inputs
-    return is_rule2_satisfied(inputs) and is_rule1_satisfied(inputs)
+    rule2_satisfied = is_rule2_satisfied(inputs)
+    print "Inputs %s and rule 2 satisfied %s" % (inputs, rule2_satisfied)
+    return rule2_satisfied and is_rule1_satisfied(inputs)
 
 def powerset(s):
     return itertools.chain.from_iterable(itertools.combinations(s, r) for r in range(len(s)+1))
@@ -12,7 +13,8 @@ def powerset(s):
 def is_rule1_satisfied(inputs):
     for subset1 in powerset(inputs):
         for subset2 in powerset(inputs):
-            if (set(subset1) != set(subset2)) & (sum(subset1) == sum(subset2)):
+            if (len(subset1) == len(subset2)) and (set(subset1) != set(subset2)) and (sum(subset1) == sum(subset2)):
+                print "Inputs %s subset1 %s subset2 %s" % (inputs, subset1, subset2)
                 return False
     return True
 
